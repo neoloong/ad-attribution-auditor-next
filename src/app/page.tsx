@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
@@ -20,7 +20,7 @@ export default function LandingPage() {
             <a href="#features" className="hover:text-foreground transition-colors">Features</a>
             <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
             <Link href="/methodology" className="hover:text-foreground transition-colors">Methodology</Link>
-            <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+            <a href="#open-source" className="hover:text-foreground transition-colors">Open Source</a>
           </nav>
           <div className="flex items-center gap-3">
             <Link
@@ -178,56 +178,35 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section id="pricing" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">Pricing</h2>
-          <p className="text-center text-muted-foreground mb-12">Start free. Upgrade when you need more.</p>
-          <div className="grid gap-8 md:grid-cols-3 max-w-4xl mx-auto">
-            <Card className="relative">
-              <CardHeader>
-                <CardTitle>Open Source</CardTitle>
-                <CardDescription>Self-hosted, full control</CardDescription>
-                <p className="text-3xl font-bold mt-2">Free</p>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <p>CSV upload & audit</p>
-                <p>De-duplication & ROAS</p>
-                <p>Cannibalization scoring</p>
-                <p>Health check alerts</p>
-                <p>MIT License</p>
-              </CardContent>
-            </Card>
-            <Card className="relative border-primary">
-              <Badge className="absolute -top-2.5 left-1/2 -translate-x-1/2">Popular</Badge>
-              <CardHeader>
-                <CardTitle>SaaS (Coming Soon)</CardTitle>
-                <CardDescription>Hosted, no setup</CardDescription>
-                <p className="text-3xl font-bold mt-2">$29<span className="text-sm font-normal text-muted-foreground">/mo</span></p>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <p>Everything in Open Source</p>
-                <p>Shopify App integration</p>
-                <p>API auto-sync (no CSVs)</p>
-                <p>AI-powered reports</p>
-                <p>Email alerts</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Enterprise (Coming Soon)</CardTitle>
-                <CardDescription>Custom integrations</CardDescription>
-                <p className="text-3xl font-bold mt-2">Custom</p>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <p>Everything in SaaS</p>
-                <p>Multi-brand dashboard</p>
-                <p>TikTok, Email channels</p>
-                <p>Data Clean Room</p>
-                <p>SLA & dedicated support</p>
-              </CardContent>
-            </Card>
+      {/* Open Source */}
+      <section id="open-source" className="py-20">
+        <div className="container mx-auto px-4 max-w-2xl text-center">
+          <h2 className="text-3xl font-bold mb-4">Free. Open Source. Forever.</h2>
+          <p className="text-muted-foreground mb-8">
+            No paid tiers, no waitlist, no &ldquo;request a demo.&rdquo; MIT licensed.
+            All processing happens in your browser — your data never leaves your device.
+            Built by someone who works in ad measurement and got tired of watching
+            platforms inflate their numbers.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/upload"
+              className={cn(buttonVariants({ size: "lg" }))}
+            >
+              Try It Now <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <a
+              href="https://github.com/neoloong/ad-attribution-auditor-next"
+              target="_blank"
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+              rel="noreferrer"
+            >
+              Star on GitHub
+            </a>
           </div>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Looking to contribute? PRs welcome. The core engine is 700 lines of typed, tested TypeScript.
+          </p>
         </div>
       </section>
 
